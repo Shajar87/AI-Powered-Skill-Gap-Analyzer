@@ -1,4 +1,4 @@
-# Resume-Analyzer-
+# Resume-JD Analyzer
 Project Overview
 
 This project is a Retrieval Augmented Generation (RAG) based system designed to analyze resumes against job descriptions. It effectively identifies technical skills and tools mentioned in the job description that are missing from the resume. Additionally, it provides valuable resources like YouTube tutorials and courses to help users bridge these skill gaps.
