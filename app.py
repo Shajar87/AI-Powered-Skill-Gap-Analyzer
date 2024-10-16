@@ -30,7 +30,7 @@ except Exception as e:
     st.stop()
 
 # Streamlit app setup
-st.title("Resume Analyzer w.r.t. Job Description")
+st.title("Resume - Job Description Skills Analyzer")
 
 # Ensure the GEMINI API key is present
 if gemini_api_key is None:
@@ -75,10 +75,10 @@ if uploaded_file is not None:
         {resume_text}
         Please output the skills in a structured format.
 
-        For example sql is mentioned in the resume but python and Power BI are not mentioned, then your response should be as below:
-        1. SQL: present  
-        2. Python: missing
-        3. Power BI: missing
+        For example sql is mentioned in the resume but python and Power BI are not present, then your response should be as below:
+        1. SQL: present in the resume  
+        2. Python: missing from the resume
+        3. Power BI: missing from the resume
         And don't try to explain the response. Only output the response in the specified format.
 
         """
@@ -108,10 +108,9 @@ if uploaded_file is not None:
             with st.spinner("Analyzing resume and job description..."):
                 query_input = promptTemplate.format(job_description_text=job_description_text, resume_text=resume_text)
                 result = qa_chain({"query": query_input})
-                # Display the missing skills
-
-            response = result.get("result", "No relevant skills found.")
-            st.subheader("Skills Analysis Result:")
+            # Display the missing skills
+            response = result.get("result", "No skills found.")
+            st.subheader("Resume Skills Analysis Result Against The Job Description:")
             st.write(result["result"])  
 
             # # Debugging: Show the raw response
