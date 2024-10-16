@@ -17,3 +17,5 @@ This project is a Retrieval Augmented Generation (RAG) based system designed to 
 3. **Generate Embeddings:** Convert resume text chunks into embeddings, store in FAISS vector store.
 4. **Identify Missing Skills:** Use RetrievalQA chain to compare job description with resume embeddings, identify missing skills.
 5. **Display Results:** Show missing skills list and suggest YouTube tutorials for those skills.
+
+![Image Description](https://github.com/Shajar87/Resume-Analyzer-/blob/main/Resume-JD-Flow.png)
