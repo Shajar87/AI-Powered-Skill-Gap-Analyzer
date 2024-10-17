@@ -32,4 +32,4 @@ A RetrievalQA chain is used:
 -	A function get_youtube_videos fetches relevant YouTube tutorials for each missing skill using the YouTube API.
 
 
-![Image Description](https://github.com/Shajar87/Resume-Analyzer-/blob/main/Resume-JD-Flow.png)
+![Image Description]([https://github.com/Shajar87/Resume-Analyzer-/blob/main/Resume-JD-Flow.png](https://github.com/Shajar87/Resume-Analyzer-/blob/main/Skill%20Gap%20Analyzer%20Flow.png))
