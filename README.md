@@ -25,7 +25,7 @@ This project is a Retrieval Augmented Generation (RAG) based system designed to 
 -The prompt template is filled with the user-provided job description and the preprocessed resume text.
 A RetrievalQA chain is used: 
 -	The retriever searches the vector store (created in step 3) for relevant information based on the job description.
--	The LLM (ChatGoogleGenerativeAI) processes the retrieved resume information (embeddings) and job description to identify missing skills.
+-	The LLM (ChatGoogleGenerativeAI) processes the retrieved resume information (embeddings) and job description to identify skills from JD and the retrieved resume.
 #### 6. Display Results:
 -	The raw LLM response is displayed, providing skills gap analysis.
 #### 7. Suggest YouTube Tutorials (for missing skills):
