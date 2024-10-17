@@ -1,4 +1,4 @@
-# Resume-JD Analyzer
+# AI-Powered Skill Gap Analyzer
 Project Overview
 
 This project is a Retrieval Augmented Generation (RAG) based system designed to analyze resumes against job descriptions. It effectively identifies technical skills and tools mentioned in the job description that are missing from the resume. Additionally, it provides valuable resources like YouTube tutorials and courses to help users bridge these skill gaps.
@@ -10,7 +10,7 @@ This project is a Retrieval Augmented Generation (RAG) based system designed to 
 - Resource Recommendations: Offers relevant YouTube tutorials and online courses to assist users in acquiring missing skills.
 
 
-## **How Resume Analyzer Works**
+## **How AI-Powered Skill Gap Analyzer Works**
 
 #### 1. Upload Resume and Job Description:
 - The user uploads a PDF resume and enters the job description in the text area provided.
