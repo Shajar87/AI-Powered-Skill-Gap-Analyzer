@@ -7,7 +7,7 @@ This project is a Retrieval Augmented Generation (RAG) based system designed to 
 
 - Skill Comparison: Compares resume skills against job description requirements.
 - Missing Skill Identification: Accurately pinpoints technical skills and tools that are absent from the resume.
-- Resource Recommendations: Offers relevant YouTube tutorials and online courses to assist users in acquiring missing skills.
+- Resource Recommendations: Offers relevant YouTube tutorials and online courses to assist users in acquiring missing and non-missing skills.
 
 
 ## **How AI-Powered Skill Gap Analyzer Works**
