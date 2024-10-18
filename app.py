@@ -55,8 +55,6 @@ if uploaded_file is not None:
         # Extract text from the PDF and split into chunks
         text_splitter = CharacterTextSplitter(chunk_size=100, chunk_overlap=30)
         docs = text_splitter.split_documents(documents)
-        texts = [doc.page_content for doc in documents]
-        resume_text = "\n".join(texts)  # Combine the extracted resume text
 
         # Generate embeddings
         embedding_model = GoogleGenerativeAIEmbeddings(
@@ -68,24 +66,20 @@ if uploaded_file is not None:
         db = FAISS.from_documents(docs, embedding_model)
 
         # Define prompt template for analyzing missing skills
-        promptTemplate = """
-        Your task is as a helpful assistant is to identify technical skills and tools mentioned in the following Job Description:
-        {job_description_text}
-        that are not present in the retrieved context from vector database:
-        {resume_text}
-        Please output the skills in a structured format.
+        template = """
+        Identify the technical skills mentioned in the following job description:
+        {job_description}
 
-        For example sql is mentioned in the resume but python and Power BI are not present, then your response should be as below:
-        1. SQL: present in the resume  
-        2. Python: missing from the resume
-        3. Power BI: missing from the resume
-        And don't try to explain the response. Only output the response in the specified format.
-
-        """
+        Output the skills in a bullet points format along with mentioning whether the skills are present in the retrieved relevant skills from the vector database.
+        For example sql, python and Power BI are mentioned in the {job_description} but SQL in not present in the vector database and python and Power BI are present the vector database, then your response should be as below:
+                1. SQL: missing from the resume  
+                2. Python: present in the resume
+                3. Power BI: present in the resume
+                And don't try to explain the response. Only output the response in the specified format."""
 
         prompt = PromptTemplate(
-            input_variables=["job_description", "resume_text"],
-            template=promptTemplate
+            input_variables=["job_description"],
+            template=template
         )
         # Create retriever
         retriever = db.as_retriever()
@@ -106,7 +100,7 @@ if uploaded_file is not None:
         if job_description_text:
             # Handle job description and generate missing skills response
             with st.spinner("Analyzing resume and job description..."):
-                query_input = promptTemplate.format(job_description_text=job_description_text, resume_text=resume_text)
+                query_input = prompt.format(job_description=job_description_text)
                 result = qa_chain({"query": query_input})
             # Display the missing skills
             response = result.get("result", "No skills found.")
