@@ -12,19 +12,17 @@ This project is a Retrieval Augmented Generation (RAG) based system designed to 
 
 ## **How AI-Powered Skill Gap Analyzer Works**
 
-![Image Description]([https://github.com/Shajar87/Resume-Analyzer-/blob/main/Skill%20Gap%20Analyzer%20Flow.png](https://github.com/Shajar87/Resume-Analyzer-/blob/main/rag_flowchart.png))
+![Image Description](https://github.com/Shajar87/Resume-Analyzer-/blob/main/rag_flowchart.png)
 --- 
 #### 1. Upload Resume and Job Description:
 - The user uploads a PDF resume and enters the job description in the text area provided.
 #### 2. Preprocess Resume (if upload successful):
-- The resume text is extracted using the "PyPDFLoader".
--	The extracted text is split into smaller chunks using a "CharacterTextSplitter" for better processing.
+-	The uploaded resume is split into smaller chunks using a "CharacterTextSplitter" for better processing.
 #### 3. Generate Embeddings (if processing successful):
-- A "GoogleGenerativeAIEmbeddings" model converts the extracted resume text chunks into numerical representations (embeddings) and stored in a FAISS vector store. 
+- A "GoogleGenerativeAIEmbeddings" model converts the resume chunks into numerical representations (embeddings) and stored in a FAISS vector store. 
 #### 4. Define Prompt Template:
-- The Prompt Template is created. 
+- The Prompt Template is created prompt with context set as user-provided job description. 
 #### 5. Generate Skills Gap Analysis Response:
--The prompt template is filled with the user-provided job description.
 A RetrievalQA chain is used: 
 -	The retriever searches the vector store (created in step 3) for relevant information based on the job description.
 -	The LLM (ChatGoogleGenerativeAI) processes the retrieved resume information (embeddings) and job description to identify skills from JD and the retrieved resume.
