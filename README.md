@@ -12,6 +12,8 @@ This project is a Retrieval Augmented Generation (RAG) based system designed to 
 
 ## **How AI-Powered Skill Gap Analyzer Works**
 
+![Image Description]([https://github.com/Shajar87/Resume-Analyzer-/blob/main/Skill%20Gap%20Analyzer%20Flow.png](https://github.com/Shajar87/Resume-Analyzer-/blob/main/rag_flowchart.png))
+--- 
 #### 1. Upload Resume and Job Description:
 - The user uploads a PDF resume and enters the job description in the text area provided.
 #### 2. Preprocess Resume (if upload successful):
@@ -31,5 +33,3 @@ A RetrievalQA chain is used:
 #### 7. Suggest YouTube Tutorials (for missing skills):
 -	A function get_youtube_videos fetches relevant YouTube tutorials for each missing skill using the YouTube API.
 
-
-![Image Description](https://github.com/Shajar87/Resume-Analyzer-/blob/main/Skill%20Gap%20Analyzer%20Flow.png)
