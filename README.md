@@ -9,8 +9,9 @@ This project is a Retrieval Augmented Generation (RAG) based system designed to 
 - Missing Skill Identification: Accurately pinpoints technical skills and tools that are absent from the resume.
 - Resource Recommendations: Offers relevant YouTube tutorials or courses to assist users in acquiring missing skills.
 
+## Curious to try it? Click the link: https://huggingface.co/spaces/Mohd0509/Resume-JD-Analyzer
 
-## **How AI-Powered Skill Gap Analyzer Works**
+## How AI-Powered Skill Gap Analyzer Works
 
 ![Image Description](https://github.com/Shajar87/Resume-Analyzer-/blob/main/rag_flowchart.png)
 --- 
