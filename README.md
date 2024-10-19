@@ -22,7 +22,7 @@ This project is a Retrieval Augmented Generation (RAG) based system designed to 
 #### 4. Define Prompt Template:
 - The Prompt Template is created. 
 #### 5. Generate Skills Gap Analysis Response:
--The prompt template is filled with the user-provided job description and the preprocessed resume text.
+-The prompt template is filled with the user-provided job description.
 A RetrievalQA chain is used: 
 -	The retriever searches the vector store (created in step 3) for relevant information based on the job description.
 -	The LLM (ChatGoogleGenerativeAI) processes the retrieved resume information (embeddings) and job description to identify skills from JD and the retrieved resume.
