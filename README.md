@@ -17,6 +17,8 @@ This project is a Retrieval Augmented Generation (RAG) based system designed to 
 --- 
 #### 1. Upload Resume and Job Description:
 - The user uploads a PDF resume and enters the job description in the text area provided.
+![User Interface]( https://github.com/Shajar87/Resume-Analyzer-/blob/main/UserInterface.png)
+
 #### 2. Preprocess Resume (if upload successful):
 -	The uploaded resume is split into smaller chunks using a "CharacterTextSplitter" for better processing.
 #### 3. Generate Embeddings (if processing successful):
@@ -29,6 +31,10 @@ A RetrievalQA chain is used:
 -	The LLM (ChatGoogleGenerativeAI) processes the retrieved resume information (embeddings) and job description to identify skills from JD and the retrieved resume.
 #### 6. Display Results:
 -	The LLM response is displayed, providing skills gap analysis.
+![Skill Gap Analysis Result](https://github.com/Shajar87/Resume-Analyzer-/blob/main/Skill%20gap%20analysis.png)
+
 #### 7. Suggest YouTube Tutorials (for missing skills):
 -	A function get_youtube_videos fetches relevant YouTube tutorials for each missing skill using the YouTube API.
+![YouTube Tutorials Result](https://github.com/Shajar87/Resume-Analyzer-/blob/main/YouTube%20Tutorials.png)
+
 
